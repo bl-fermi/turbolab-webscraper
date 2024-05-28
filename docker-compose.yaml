@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  turbolab-webscrapper:
+    image: blinkylite/turbolab-webscraper:${DOCKER_TAG}
+    restart: unless-stopped
+    container_name: turbolab-webscraper
+#    ports:
+#      - "${NODEREDPORT}:60430"
+    environment:
+      - TURBOLAB_URL=${TURBOLAB_URL}
+      - WEBLOAD_DELAY=${WEBLOAD_DELAY}
+      - MQTTSERVERIP=${MQTTSERVERIP}
+      - MQTTUSERNAME=${MQTTUSERNAME}
+      - MQTTPASSWORD=${MQTTPASSWORD}
+      - MQTTCLIENTID=${MQTTCLIENTID}
+      - BOX=${BOX}
+      - CUBE=${CUBE}
+      - TRAYTYPE=${TRAYTYPE}
+      - TRAYNAME=${TRAYNAME}
+#networks:
+#  default:
+#    name: tunnel
+#    external: true
+
